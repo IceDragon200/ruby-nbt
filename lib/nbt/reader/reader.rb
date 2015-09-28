@@ -39,7 +39,7 @@ module Nbt
     when TagId::TAG_BYTE_ARRAY
       return NbtByteArray.read(reader).val, nil
     when TagId::TAG_STRING
-      return NbtString.read(reader).string, nil
+      return NbtString.read(reader).string.to_s, nil
     when TagId::TAG_LIST
       h = NbtListHead.read(reader)
       result = []
